@@ -40,7 +40,7 @@ export async function POST(req: NextRequest) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      from: "Portfolio Contact <onboarding@resend.dev>",
+      from: "Portfolio Contact <noreply@ferdy-alwondho.my.id>",
       to: [toEmail],
       reply_to: email,
       subject: subject
