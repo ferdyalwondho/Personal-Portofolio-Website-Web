@@ -16,25 +16,51 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL ?? "https://ferdyalwondho.com"
+    process.env.NEXT_PUBLIC_SITE_URL ?? "https://ferdy-alwondho.my.id"
   ),
-  title: "Ferdy Alwondho — Technical Integration Engineer",
+  title: "Ferdy Alwondho — Head of IT Apps & Integration",
   description:
-    "13+ years bridging telecom networks, ERP platforms, and full-stack web apps. Based in Jakarta, working globally.",
+    "Head of IT Apps & Integration with 13+ years across project management, PMO, telecom infrastructure, ERP migrations, and full-stack web development. Based in Jakarta, Indonesia.",
+  keywords: [
+    "Ferdy Alwondho",
+    "Head of IT",
+    "IT Integration",
+    "Project Manager",
+    "PMO",
+    "Dynamics 365",
+    "ERP",
+    "Laravel",
+    "Next.js",
+    "Telecom",
+    "Jakarta",
+  ],
+  authors: [{ name: "Ferdy Alwondho", url: "https://ferdy-alwondho.my.id" }],
   openGraph: {
-    title: "Ferdy Alwondho — Technical Integration Engineer",
+    title: "Ferdy Alwondho — Head of IT Apps & Integration",
     description:
-      "Telecom + IT app specialist. Microwave, VSAT, FTTH, Laravel, Dynamics 365.",
-    images: ["/og-image.png"],
+      "13+ years across PM, PMO, telecom rollouts, ERP migrations, and full-stack app delivery. Based in Jakarta, working globally.",
+    url: "https://ferdy-alwondho.my.id",
+    siteName: "Ferdy Alwondho Portfolio",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Ferdy Alwondho Portfolio" }],
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
+    title: "Ferdy Alwondho — Head of IT Apps & Integration",
+    description:
+      "13+ years across PM, PMO, telecom rollouts, ERP migrations, and full-stack app delivery.",
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+  alternates: {
+    canonical: "https://ferdy-alwondho.my.id",
   },
 };
 
