@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { GraduationCap, Award, Languages } from "lucide-react";
+import { GraduationCap, Award, BookOpen, Languages } from "lucide-react";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 
 const education = [
@@ -14,10 +14,17 @@ const education = [
 ];
 
 const certifications = [
+  "ISO 27001 Internal Auditor",
+  "ISO 27001:2022 Awareness & Implementation — ISMS",
   "VMware VTSP",
-  "Microsoft Dynamics 365",
-  "Microsoft Project Online (EPM)",
-  "Microsoft Dynamics CRM",
+];
+
+const courses = [
+  "Scrum Master",
+  "Power BI",
+  "Technical Partner Enablement — Dynamics CRM Online Deep Dive",
+  "Windows Server 2016 and Hybrid Cloud — Cloud + Enterprise Bootcamp",
+  "VMware VTSP Training",
 ];
 
 const languages = [
@@ -86,6 +93,23 @@ export function Education() {
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" aria-hidden="true" />
                   <span className="text-sm text-text-secondary">{cert}</span>
+                </li>
+              ))}
+            </ul>
+
+            {/* Courses */}
+            <div className="flex items-center gap-2 text-text-secondary mt-4">
+              <BookOpen className="w-5 h-5" aria-hidden="true" />
+              <h3 className="font-heading font-semibold text-text-primary">Courses</h3>
+            </div>
+            <ul className="flex flex-col gap-2" role="list">
+              {courses.map((course) => (
+                <li
+                  key={course}
+                  className="flex items-center gap-3 px-4 py-3 rounded-xl border border-border bg-bg-primary"
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent/50 flex-shrink-0" aria-hidden="true" />
+                  <span className="text-sm text-text-secondary">{course}</span>
                 </li>
               ))}
             </ul>
