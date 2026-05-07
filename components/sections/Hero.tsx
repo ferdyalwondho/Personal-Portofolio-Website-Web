@@ -77,7 +77,8 @@ export function Hero() {
             {/* Sub-tagline */}
             <motion.p {...fadeUp(0.2)} className="text-body-lg text-text-secondary max-w-xl">
               Head of IT Apps & Integration with 13+ years across PM, PMO, telecom rollouts,
-              ERP migrations, and full-stack app delivery — based in Jakarta, working globally.
+              ERP migrations, and full-stack app delivery. ISO 27001:2022 certified internal auditor —
+              bringing security governance into every system I build. Based in Jakarta, working globally.
             </motion.p>
 
             {/* CTA buttons */}

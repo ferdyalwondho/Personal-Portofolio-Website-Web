@@ -18,8 +18,8 @@ export const experiences: Experience[] = [
     period: "Jan 2023 – Present",
     current: true,
     description:
-      "Leading the IT Application Department end-to-end. Built WMS Next-G and PM/PO Tools using Laravel + Next.JS + PostgreSQL. Operating Microsoft Dynamics 365 F&O. Led the AX 2012 → D365 FO migration.",
-    highlights: ["Laravel", "Next.JS", "PostgreSQL", "Dynamics 365 F&O"],
+      "Leading the IT Application Department end-to-end. Built WMS Next-G and PM/PO Tools using Laravel + Next.JS + PostgreSQL. Operating Microsoft Dynamics 365 F&O. Led the AX 2012 → D365 FO migration. As a certified ISO 27001:2022 Internal Auditor, conducts ISMS audits, evaluates security controls, and ensures IT operations align with information security best practices.",
+    highlights: ["Laravel", "Next.JS", "PostgreSQL", "Dynamics 365 F&O", "ISO 27001:2022"],
   },
   {
     id: "pmo-nationwide",

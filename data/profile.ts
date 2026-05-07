@@ -31,7 +31,7 @@ export const profile = {
     paragraphs: [
       "I'm Ferdy — a technical professional with 13+ years spanning telecommunications, network infrastructure, IT application development, and project management. Across that journey, I've consistently played one role: the bridge between customers, networks, and platforms. Today I head the IT Applications department at Alita Praya Mitra — grounded in years of PM and PMO experience, I've shipped multiple internal applications and led the migration from AX 2012 to Dynamics 365 F&O.",
       "From rolling out microwave transmission across Sulawesi, Bali, and Papua, to leading a Microsoft Dynamics 365 ERP migration, to shipping internal Laravel + Next.js apps for warehouse and project management — I translate messy real-world requirements into systems that scale and stay maintainable.",
-      "What I bring isn't just code or cable runs. It's structured thinking, high ownership, and the willingness to push back on requirements when they need refining.",
+      "What I bring isn't just code or cable runs. It's structured thinking, high ownership, and the willingness to push back on requirements when they need refining. As a certified ISO 27001:2022 Internal Auditor, I also bring information security governance to the table — assessing risks, identifying control gaps, and ensuring the systems I build aren't just functional, but secure and compliant.",
     ],
   },
 };
