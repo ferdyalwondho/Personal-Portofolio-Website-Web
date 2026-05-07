@@ -47,7 +47,7 @@ const education = [
 ];
 
 const certifications: Item[] = [
-  { label: "ISO 27001 Internal Auditor",                      pdf: "/certificate/ISO-27001-Internal-Auditor.pdf" },
+  { label: "ISO 27001:2022 Internal Auditor",                      pdf: "/certificate/ISO-27001-Internal-Auditor.pdf" },
   { label: "ISO 27001:2022 Awareness & Implementation — ISMS", pdf: "/certificate/ISO-27001-ISMS-Awareness.pdf" },
   { label: "VMware VTSP" },
 ];
