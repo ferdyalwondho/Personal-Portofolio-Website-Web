@@ -57,7 +57,6 @@ const courses: Item[] = [
   { label: "Power BI",                                                              pdf: "/certificate/Power-BI.pdf" },
   { label: "Technical Partner Enablement — Dynamics CRM Online Deep Dive" },
   { label: "Windows Server 2016 and Hybrid Cloud — Cloud + Enterprise Bootcamp" },
-  { label: "VMware VTSP Training" },
 ];
 
 const languages = [
@@ -80,102 +79,94 @@ export function Education() {
           className="mb-12"
         />
 
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
-
-          {/* Left col — Courses (top) + Education (bottom) */}
-          <div className="flex flex-col gap-10">
-            {/* Courses */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.55, ease: "easeOut" }}
-              className="flex flex-col gap-5"
-            >
-              <div className="flex items-center gap-2 text-text-secondary">
-                <BookOpen className="w-5 h-5" aria-hidden="true" />
-                <h3 className="font-heading font-semibold text-text-primary">Courses</h3>
-              </div>
-              <ul className="flex flex-col gap-2" role="list">
-                {courses.map((course) => (
-                  <ItemRow key={course.label} item={course} dot="bg-accent/50" />
-                ))}
-              </ul>
-            </motion.div>
-
-            {/* Education */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
-              className="flex flex-col gap-5"
-            >
-              <div className="flex items-center gap-2 text-text-secondary">
-                <GraduationCap className="w-5 h-5" aria-hidden="true" />
-                <h3 className="font-heading font-semibold text-text-primary">Education</h3>
-              </div>
-              {education.map((edu) => (
-                <article
-                  key={edu.degree}
-                  className="p-5 rounded-xl border border-border bg-bg-primary flex flex-col gap-1"
-                >
-                  <span className="text-caption text-text-muted">{edu.period}</span>
-                  <span className="font-medium text-text-primary">{edu.degree}</span>
-                  <span className="text-sm text-text-secondary">{edu.field}</span>
-                  <span className="text-caption text-text-muted">{edu.institution}</span>
-                </article>
+        {/* Row 1 — Courses | Certifications */}
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12 mb-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.55, ease: "easeOut" }}
+            className="flex flex-col gap-5"
+          >
+            <div className="flex items-center gap-2 text-text-secondary">
+              <BookOpen className="w-5 h-5" aria-hidden="true" />
+              <h3 className="font-heading font-semibold text-text-primary">Courses</h3>
+            </div>
+            <ul className="flex flex-col gap-2" role="list">
+              {courses.map((course) => (
+                <ItemRow key={course.label} item={course} dot="bg-accent/50" />
               ))}
-            </motion.div>
-          </div>
+            </ul>
+          </motion.div>
 
-          {/* Right col — Certifications (top) + Languages (bottom) */}
-          <div className="flex flex-col gap-10">
-            {/* Certifications */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.55, ease: "easeOut", delay: 0.05 }}
-              className="flex flex-col gap-5"
-            >
-              <div className="flex items-center gap-2 text-text-secondary">
-                <Award className="w-5 h-5" aria-hidden="true" />
-                <h3 className="font-heading font-semibold text-text-primary">Certifications</h3>
-              </div>
-              <ul className="flex flex-col gap-2" role="list">
-                {certifications.map((cert) => (
-                  <ItemRow key={cert.label} item={cert} dot="bg-accent" />
-                ))}
-              </ul>
-            </motion.div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.55, ease: "easeOut", delay: 0.05 }}
+            className="flex flex-col gap-5"
+          >
+            <div className="flex items-center gap-2 text-text-secondary">
+              <Award className="w-5 h-5" aria-hidden="true" />
+              <h3 className="font-heading font-semibold text-text-primary">Certifications</h3>
+            </div>
+            <ul className="flex flex-col gap-2" role="list">
+              {certifications.map((cert) => (
+                <ItemRow key={cert.label} item={cert} dot="bg-accent" />
+              ))}
+            </ul>
+          </motion.div>
+        </div>
 
-            {/* Languages */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{ duration: 0.55, ease: "easeOut", delay: 0.15 }}
-              className="flex flex-col gap-5"
-            >
-              <div className="flex items-center gap-2 text-text-secondary">
-                <Languages className="w-5 h-5" aria-hidden="true" />
-                <h3 className="font-heading font-semibold text-text-primary">Languages</h3>
-              </div>
-              <ul className="flex flex-col gap-2" role="list">
-                {languages.map((lang) => (
-                  <li
-                    key={lang.name}
-                    className="flex items-center justify-between px-4 py-3 rounded-xl border border-border bg-bg-primary"
-                  >
-                    <span className="text-sm text-text-secondary">{lang.name}</span>
-                    <span className="text-caption text-text-muted">{lang.level}</span>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          </div>
+        {/* Row 2 — Education | Languages */}
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-12">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.55, ease: "easeOut", delay: 0.1 }}
+            className="flex flex-col gap-5"
+          >
+            <div className="flex items-center gap-2 text-text-secondary">
+              <GraduationCap className="w-5 h-5" aria-hidden="true" />
+              <h3 className="font-heading font-semibold text-text-primary">Education</h3>
+            </div>
+            {education.map((edu) => (
+              <article
+                key={edu.degree}
+                className="p-5 rounded-xl border border-border bg-bg-primary flex flex-col gap-1"
+              >
+                <span className="text-caption text-text-muted">{edu.period}</span>
+                <span className="font-medium text-text-primary">{edu.degree}</span>
+                <span className="text-sm text-text-secondary">{edu.field}</span>
+                <span className="text-caption text-text-muted">{edu.institution}</span>
+              </article>
+            ))}
+          </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.55, ease: "easeOut", delay: 0.15 }}
+            className="flex flex-col gap-5"
+          >
+            <div className="flex items-center gap-2 text-text-secondary">
+              <Languages className="w-5 h-5" aria-hidden="true" />
+              <h3 className="font-heading font-semibold text-text-primary">Languages</h3>
+            </div>
+            <ul className="flex flex-col gap-2" role="list">
+              {languages.map((lang) => (
+                <li
+                  key={lang.name}
+                  className="flex items-center justify-between px-4 py-3 rounded-xl border border-border bg-bg-primary"
+                >
+                  <span className="text-sm text-text-secondary">{lang.name}</span>
+                  <span className="text-caption text-text-muted">{lang.level}</span>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
       </div>
     </section>
