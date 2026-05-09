@@ -41,7 +41,6 @@ export const metadata: Metadata = {
       "13+ years across PM, PMO, telecom rollouts, ERP migrations, and full-stack app delivery. Based in Jakarta, working globally.",
     url: "https://ferdy-alwondho.my.id",
     siteName: "Ferdy Alwondho Portfolio",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Ferdy Alwondho Portfolio" }],
     locale: "en_US",
     type: "website",
   },
