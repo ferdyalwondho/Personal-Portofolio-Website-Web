@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Radio, Code2, Layers } from "lucide-react";
+import { Radio, Code2, Layers, Home, Sun } from "lucide-react";
 import { services } from "@/data/services";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 
@@ -9,6 +9,8 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Radio,
   Code2,
   Layers,
+  Home,
+  Sun,
 };
 
 export function Services() {
@@ -21,12 +23,12 @@ export function Services() {
       <SectionHeading
         eyebrow="05 / Services"
         heading="How I Can Help"
-        subheading="Three focus areas — pick what fits your need."
+        subheading="Four focus areas — pick what fits your need."
         id="services-heading"
         className="mb-12"
       />
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {services.map((service, i) => {
           const Icon = iconMap[service.iconName] ?? Code2;
           return (
@@ -36,7 +38,7 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
               transition={{ duration: 0.55, ease: "easeOut", delay: i * 0.1 }}
-              className="relative group flex flex-col gap-5 p-8 rounded-2xl border border-border
+              className="relative group flex flex-col gap-4 p-6 rounded-2xl border border-border
                          bg-transparent overflow-hidden
                          hover:bg-accent/5 hover:border-accent/40 transition-all duration-300"
             >
@@ -58,11 +60,11 @@ export function Services() {
                   <Icon className="w-5 h-5" aria-hidden="true" />
                 </span>
 
-                <h3 className="font-heading font-semibold text-text-primary text-xl">
+                <h3 className="font-heading font-semibold text-text-primary text-base">
                   {service.title}
                 </h3>
 
-                <p className="text-body text-text-secondary leading-relaxed">
+                <p className="text-sm text-text-secondary leading-relaxed">
                   {service.description}
                 </p>
               </div>

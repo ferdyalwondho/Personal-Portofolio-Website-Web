@@ -7,11 +7,12 @@ import { profile } from "@/data/profile";
 import { cn } from "@/lib/utils";
 
 const navLinks = [
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "#about", offset: 40 },
+  { label: "Skills", href: "#competencies", offset: 40 },
+  { label: "Experience", href: "#experience", offset: 40 },
+  { label: "Projects", href: "#projects", offset: 40 },
+  { label: "Services", href: "#services", offset: 0 },
+  { label: "Contact", href: "#contact", offset: 0 },
 ];
 
 export function Navbar() {
@@ -20,7 +21,10 @@ export function Navbar() {
   const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 80);
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 80);
+      if (window.scrollY < 100) setActiveSection("");
+    };
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -54,7 +58,10 @@ export function Navbar() {
   const handleNavClick = (href: string) => {
     setMobileOpen(false);
     const el = document.getElementById(href.slice(1));
-    el?.scrollIntoView({ behavior: "smooth" });
+    if (!el) return;
+    const link = navLinks.find((l) => l.href === href);
+    const top = el.getBoundingClientRect().top + window.scrollY + (link?.offset ?? 40);
+    window.scrollTo({ top, behavior: "smooth" });
   };
 
   return (

@@ -13,8 +13,8 @@ const fadeUp = (delay = 0) => ({
 });
 
 export function Hero() {
-  const scrollToProjects = () => {
-    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
+  const scrollToServices = () => {
+    document.getElementById("services")?.scrollIntoView({ behavior: "smooth" });
   };
   const scrollToContact = () => {
     document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
@@ -32,12 +32,12 @@ export function Hero() {
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 md:py-14 w-full">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-4 pb-10 md:pt-6 md:pb-12 w-full">
         {/* Hero card */}
         <div className="relative rounded-2xl overflow-hidden
                         bg-gradient-to-br from-[#0D1F3C] via-[#0F2040] to-[#0A1628]
                         border border-blue-800/30 shadow-[0_0_80px_-20px_rgba(59,130,246,0.3)]
-                        px-8 pt-10 pb-0 md:px-12 md:pt-14 md:pb-0">
+                        px-8 pt-10 pb-10 md:px-12 md:pt-14 md:pb-12">
 
           {/* Inner glow top-left */}
           <div
@@ -78,18 +78,37 @@ export function Hero() {
             <motion.p {...fadeUp(0.2)} className="text-body-lg text-text-secondary max-w-xl">
               Head of IT Apps & Integration with 13+ years across PM, PMO, telecom rollouts,
               ERP migrations, and full-stack app delivery. ISO 27001:2022 certified internal auditor —
-              bringing security governance into every system I build. Based in Jakarta, working globally.
+              bringing security governance into every system I build. Beyond IT: residential construction
+              coordination and solar PV + battery system design. Based in Jakarta, working globally.
             </motion.p>
 
+            {/* Specialty tags */}
+            <motion.div {...fadeUp(0.25)} className="flex flex-wrap gap-2">
+              {[
+                "IT Apps & Integration",
+                "Telecom & PMO",
+                "Residential Construction",
+                "Solar PV & Battery",
+              ].map((tag) => (
+                <span
+                  key={tag}
+                  className="px-3 py-1 rounded-full text-xs font-medium border border-border/60
+                             text-text-secondary bg-bg-secondary/50"
+                >
+                  {tag}
+                </span>
+              ))}
+            </motion.div>
+
             {/* CTA buttons */}
-            <motion.div {...fadeUp(0.3)} className="flex flex-wrap gap-4">
+            <motion.div {...fadeUp(0.35)} className="flex flex-wrap gap-4">
               <button
-                onClick={scrollToProjects}
+                onClick={scrollToServices}
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-medium
                            bg-accent text-accent-foreground hover:bg-accent-hover
                            transition-colors text-base"
               >
-                View My Work
+                How I Can Help
                 <ArrowDown className="w-4 h-4" aria-hidden="true" />
               </button>
               <button

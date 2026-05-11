@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Radio, Code2, Layers } from "lucide-react";
+import { Radio, Code2, Layers, Hammer } from "lucide-react";
 import { competencies } from "@/data/competencies";
 import { SectionHeading } from "@/components/shared/SectionHeading";
 
@@ -9,6 +9,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Radio,
   Code2,
   Layers,
+  Hammer,
 };
 
 export function Competencies() {
@@ -27,7 +28,7 @@ export function Competencies() {
           className="mb-12"
         />
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
           {competencies.map((comp, i) => {
             const Icon = iconMap[comp.iconName] ?? Code2;
             return (
